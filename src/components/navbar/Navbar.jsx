@@ -3,6 +3,9 @@ import { CiHeart, CiSearch } from "react-icons/ci";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { LuUserRound } from "react-icons/lu";
 import { Link, NavLink } from 'react-router-dom';
+import { TbFileText } from "react-icons/tb";
+import { AiOutlinePicture } from "react-icons/ai";
+
 
 
 
@@ -46,7 +49,7 @@ function Navbar({data, setdata}) {
                 </div>
             </div>
             {
-          modal && <div className="modal fixed top-0  left-0 w-full h-screen content-center flex items-center justify-center bg-white left-0">
+          modal && <div className="modal fixed z-2 top-0  left-0 w-full h-screen content-center flex items-center justify-center bg-white left-0">
             <div className="box">
               <div className="info text-center w-[500px] pb-[40px] text-[28px] font-bold">
                 <h2>Create</h2>
@@ -75,7 +78,8 @@ function Navbar({data, setdata}) {
                   setmodal(false)
                 }} >
                   <div className="input flex items-center gap-[10px]  ">
-                    <label className='capitalize w-[40px]' >img:</label>
+                    <label className='capitalize w-[40px] ' >
+img:</label>
                     <input required onInput={(e) => {
                       setimg(e.target.value)
                     }} placeholder='Img' className=' rounded-[4px] outline-none pl-[10px]  bg-white  w-[90%] h-[45px] ' type="text" />
@@ -93,10 +97,12 @@ function Navbar({data, setdata}) {
                     }} placeholder='Price' className=' rounded-[4px] outline-none pl-[10px]  bg-white  w-[90%] h-[45px]' type="number" />
                   </div>
                   <div className="input flex items-center gap-[10px]  ">
-                    <label className='capitalize w-[40px]' >desc:</label>
+                    <label className='capitalize w-[40px]   ' > 
+desc:</label>
                     <input required onInput={(e) => {
                       setdeck(e.target.value)
                     }} placeholder='Desc' className=' rounded-[4px] outline-none pl-[10px]  bg-white  w-[90%] h-[45px] ' type="text" />
+                    
                   </div>
                   <div className="btn pt-[40px] flex items-center justify-between " >
                   <button  onClick={()=>{

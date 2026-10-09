@@ -2,11 +2,11 @@ import React from 'react'
 import Herohome from './homeSections/heroHome/Herohome'
 import Onehomesection from './homeSections/oneHome/Onehomesection'
 
-function Home({data}) {
+function Home({data, setdata}) {
   return (
     <>
     <Herohome/>
-    <Onehomesection data={data} />
+    <Onehomesection data={data} setdata={setdata} />
     
     </>
   )

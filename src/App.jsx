@@ -39,7 +39,7 @@ function App() {
     <BrowserRouter>
     <Navbar data={data} setdata={setdata} />
     <Routes>
-<Route path='/' element={<Home data={data}  />} />
+<Route path='/' element={<Home data={data} setdata={setdata}  />} />
 <Route path='/detail/:id'  element={<Detail data={data} />} />
 
 

@@ -89,7 +89,7 @@ function Detail({ data }) {
                                 <h1 className="text-[24px]">Total Price:</h1>
                                 </div>
                               <div className="div   flex items-center justify-center">
-                              <h2 className=" text-[22px] font-normal pt-[4px] text-[green] " >{totalPrice}$</h2>
+                              <h2 className=" text-[22px] font-normal pt-[4px] text-green-500 " >{totalPrice}$</h2>
                               </div>
                                </div>
                                <div className="plus_btn flex items-center  pt-[32px]">
