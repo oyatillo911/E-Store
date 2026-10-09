@@ -12,7 +12,8 @@ function Detail({ data }) {
     })
 
     const [number, setnumber] = useState(1)
-    const [mainImg,setmainImg]=useState(filterinfo.img)
+    const totalPrice = filterinfo.price * number
+    const [mainImg, setmainImg] = useState(filterinfo.img)
     return (
         <>
             <section>
@@ -36,12 +37,12 @@ function Detail({ data }) {
                         </div>
                         <h2 className="font-medium  text-[16px] text-[#000000] " >iPhone 14 Pro Max</h2>
                     </div>
-                    <div className="box flex items-center justify-between ">
+                    <div className="box flex items-center justify-between py-[100px] ">
                         <div className="logo w-[48%] flex items-center justify-between">
                             <div className="w-[15%] flex items-start flex-col gap-[10px] ">
                                 {
                                     filterinfo.imgs.map((item) => {
-                                        return <div className="small_img  w-full cursor-pointer h-[80px] " onClick={()=>{
+                                        return <div className="small_img  w-full cursor-pointer h-[80px] " onClick={() => {
                                             setmainImg(item)
                                         }}>
                                             <img className="w-full h-full" src={item} alt="" />
@@ -58,8 +59,8 @@ function Detail({ data }) {
                         <div className="info w-[48%] ">
                             <h1 className="text-[40px] font-bold text-[#000000]" >{filterinfo.title}</h1>
                             <div className="price  flex items-center gap-[15px]">
-                                <span className="font-medium text-[32px] text-[#000000] " >{filterinfo.price}</span>
-                                <del className=" text-[24px] font-normal text-[#A0A0A0] " >$1499</del>
+                                <span className="font-medium text-[32px] text-[#000000] " >${filterinfo.price}</span>
+                              
                             </div>
                             <div className="desc">
                                 <p className="font-normal text-[14px] text-[#6C6C6C]" > {filterinfo.desc}</p>
@@ -80,7 +81,18 @@ function Detail({ data }) {
                                 }} ><span className="text-white">Add to Cart</span></Button>
 
                             </div>
-                            <div className="plus_btn flex items-center  pt-[32px]">
+                            <div className="btns flex items-center   justify-between ">
+
+                           
+                            <div className="total_price  flex  items-start gap-[5px] pt-[32px]  ">
+                                <div className="div    flex items-center justify-center  ">
+                                <h1 className="text-[24px]">Total Price:</h1>
+                                </div>
+                              <div className="div   flex items-center justify-center">
+                              <h2 className=" text-[22px] font-normal pt-[4px] text-[green] " >{totalPrice}$</h2>
+                              </div>
+                               </div>
+                               <div className="plus_btn flex items-center  pt-[32px]">
                                 <div onClick={() => {
                                     if (number > 1) {
                                         setnumber(number - 1)
@@ -96,6 +108,7 @@ function Detail({ data }) {
                                 }} className="plus  w-[40px] h-[44px] flex items-center justify-center border-[1px] border-[#00000080] border-solid  rounded-r-[4px] cursor-pointer ">
                                     <span className="text-[20px] w-full  h-full text-center content-center " >+</span>
                                 </div>
+                            </div>
                             </div>
                         </div>
                     </div>
