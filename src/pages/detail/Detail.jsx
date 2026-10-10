@@ -45,14 +45,14 @@ function Detail({ data }) {
                                         return <div className="small_img  w-full cursor-pointer h-[80px] " onClick={() => {
                                             setmainImg(item)
                                         }}>
-                                            <img className="w-full h-full" src={item} alt="" />
+                                            <img loading="lazy" className="w-full h-full" src={item} alt="" />
                                         </div>
                                     })
                                 }
                             </div>
 
                             <div className="main_img w-[75%] h-[413px] ">
-                                <img className="w-full h-full " src={mainImg} alt="" />
+                                <img loading="lazy" className="w-full h-full " src={mainImg} alt="" />
                             </div>
 
                         </div>
